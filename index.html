@@ -3,10 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UPCN | Calculadora de Recategorización</title>
-
-  <!-- Open Graph / WhatsApp -->
-<meta property="og:title" content="Calculadora de Recategorización UPCN">
+<title>UPCN | Simulador de Recategorización</title>
+<!-- Open Graph / WhatsApp -->
+<meta property="og:title" content="Simulador de Recategorización UPCN">
 <meta property="og:description" content="Herramienta orientativa para conocer qué categoría podría corresponder según el Instructivo de Recategorización vigente.">
 <meta property="og:image" content="https://www.upcndigital.org/files/articulos/fotos/75192-0.jpg">
 <meta property="og:url" content="https://upcn-recategorizacion.github.io/recategorizacion-calculadora-upcn/">
@@ -38,6 +37,11 @@ body{font-family:system-ui;background:#f6f7fb;margin:0}
   z-index: 0;
 }
 
+.alerta-fecha {
+  color: #c53030; /* rojo institucional */
+  font-weight: 600;
+}
+
  
 h1{font-size:20px;margin:0}
 .sub,.aclaracion{font-size:12px;color:#4a5568}
@@ -65,10 +69,10 @@ hr{border:none;border-top:1px solid #e5eaf3;margin:14px 0}
 </div>
 
 
-<h1>UPCN | Calculadora de Recategorización</h1>
-<p class="sub">Herramienta de orientación para recategorización escalafonaria</p>
+<h1>UPCN | Simulador de Recategorización</h1>
+<p class="sub">Herramienta de orientación para recategorización escalafonaria - Instructivo 2025</p>
 <p class="aclaracion">
-Agentes de la Planta Permanente del Escalafón General, personal de Salud Mental y pertenecientes al escalafón Agentes Sanitarios
+Destinatarios: Agentes de Planta Permanente o con Estabilidad Reconocida del Escalafón General, personal de Salud Mental y pertenecientes al escalafón Agentes Sanitarios
 </p>
 
 <div class="grid">
@@ -98,7 +102,8 @@ Agentes de la Planta Permanente del Escalafón General, personal de Salud Mental
   </div>
 
   <div class="row">
-    <label>Antigüedad total (años)<br><small>Antigüedad computada al 30/06/2025</small></label>
+    <label>Antigüedad total (años)<br><small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
+</label>
     <input type="number" id="g_antTotal">
   </div>
 
@@ -117,7 +122,8 @@ Agentes de la Planta Permanente del Escalafón General, personal de Salud Mental
   </div>
 
   <div class="row">
-    <label>Antigüedad en el cargo (años)<br><small>Antigüedad computada al 30/06/2025</small></label>
+    <label>Antigüedad en el cargo (años)<br><small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
+</label>
     <input type="number" id="g_antCargo">
   </div>
 
@@ -145,7 +151,8 @@ Agentes de la Planta Permanente del Escalafón General, personal de Salud Mental
   </div>
 
   <div class="row">
-    <label>Antigüedad total (años)<br><small>Antigüedad computada al 30/06/2025</small></label>
+    <label>Antigüedad total (años)<br><small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
+</label>
     <input type="number" id="s_antTotal">
   </div>
 
@@ -164,7 +171,7 @@ Agentes de la Planta Permanente del Escalafón General, personal de Salud Mental
 </div>
 
 <div class="hint">
-Nota: El resultado que arroja la presente calculadora tiene carácter meramente orientativo y se basa en los criterios generales del Instructivo de Recategorización vigente. La determinación definitiva de la categoría se encuentra sujeta a la evaluación de la autoridad competente y a las particularidades de cada caso. El uso de esta herramienta no genera derechos adquiridos ni resulta vinculante para el Estado Provincial ni para la UPCN.
+Nota: El resultado que arroja este simulador tiene carácter meramente orientativo y se basa en los criterios generales del Instructivo de Recategorización vigente. La determinación definitiva de la categoría se encuentra sujeta a la evaluación de la autoridad competente y a las particularidades de cada caso. El uso de esta herramienta no genera derechos adquiridos ni resulta vinculante para el Estado Provincial ni para la UPCN.
 <br><br>
 <a href="https://www.upcndigital.org/entre-rios/articulos/75804/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnI5ZLxNd5UnK4zIAGlNz2VrWCyvwN_MqlgUAh3eJ_Oi3DNXpReTBkvpJVKJ8_aem_7MrKMAalClQVuEa0AmpK9A"
 
@@ -177,7 +184,7 @@ Nota: El resultado que arroja la presente calculadora tiene carácter meramente 
 <button onclick="limpiar()">Nueva Consulta</button>
 
 <div class="footer">
-© 2026 UPCN · Desarrollado por: <strong>Maricel M.</strong> y <strong>Fernando V.</strong>
+© 2026 UPCN - Desarrollado por: <strong>Maricel Molina</strong> y <strong>Fernando Valenzuela -</strong>
 </div>
 
 </div></div>
@@ -282,4 +289,5 @@ function limpiar(){
 
 </body>
 </html>
+
 
