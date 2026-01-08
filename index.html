@@ -98,6 +98,11 @@ hr{border:none;border-top:1px solid #e5eaf3;margin:14px 0}
     transform: translateY(0);
   }
 }
+/* Asegura que el contenido esté por encima de la marca de agua */
+.card > * {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 </head>
@@ -438,6 +443,7 @@ function limpiar(){
 
 </body>
 </html>
+
 
 
 
