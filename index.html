@@ -129,9 +129,12 @@ Destinatarios: Agentes de Planta Permanente o con Estabilidad Reconocida del Esc
   </div>
 
   <div class="row">
-    <label>Antigüedad total (años)<br><small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
+<label id="label_g_ant">
+  Antigüedad total (años)<br>
+  <small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
 </label>
-    <input type="number" id="g_antTotal">
+<input type="number" id="g_antTotal">
+
   </div>
 
   <div class="row">
@@ -178,9 +181,12 @@ Destinatarios: Agentes de Planta Permanente o con Estabilidad Reconocida del Esc
   </div>
 
   <div class="row">
-    <label>Antigüedad total (años)<br><small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
+<label id="label_s_ant">
+  Antigüedad total (años)<br>
+  <small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>
 </label>
-    <input type="number" id="s_antTotal">
+<input type="number" id="s_antTotal">
+
   </div>
 
   <div class="row">
@@ -267,6 +273,38 @@ function calcular(){
   if(regimen.value==="GENERAL") calcularGeneral();
   else calcularSalud();
 }
+/* ===== ANTIGÜEDAD EN TRAMO PROFESIONAL ===== */
+
+function controlarAntiguedadGeneral() {
+  const profesional =
+    g_agrup.value === "Profesional Tramo C" ||
+    g_agrup.value === "Profesional Tramos A y B";
+
+  const label = document.getElementById("label_g_ant");
+
+  label.innerHTML = profesional
+    ? `Antigüedad en el tramo profesional (años)<br>
+       <small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>`
+    : `Antigüedad total (años)<br>
+       <small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>`;
+}
+
+function controlarAntiguedadSalud() {
+  const profesional =
+    s_agrup.value.includes("Profesional");
+
+  const label = document.getElementById("label_s_ant");
+
+  label.innerHTML = profesional
+    ? `Antigüedad en el tramo profesional (años)<br>
+       <small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>`
+    : `Antigüedad total (años)<br>
+       <small class="alerta-fecha">Antigüedad computada al 30/06/2025</small>`;
+}
+
+/* Eventos */
+g_agrup.addEventListener("change", controlarAntiguedadGeneral);
+s_agrup.addEventListener("change", controlarAntiguedadSalud);
 
 /* ================== GENERAL ================== */
 function calcularGeneral(){
@@ -342,18 +380,12 @@ function limpiar(){
 
   resultado.textContent = "—";
 }
+controlarAntiguedadGeneral();
+controlarAntiguedadSalud();
+
 </script>
 
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
